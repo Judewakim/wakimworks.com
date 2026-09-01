@@ -40,9 +40,8 @@ jobs:
             --exclude "README.md" \
             --exclude "LICENSE"
 
-      # Without this, changes sit behind the CloudFront cache until TTL expiry.
-      - name: Invalidate CloudFront
-        run: |
-          aws cloudfront create-invalidation \
-            --distribution-id E3NFQH5V5FY5QB \
-            --paths "/*"
+      # NOTE: this pipeline deliberately does NOT invalidate CloudFront.
+      # Distribution E3NFQH5V5FY5QB fronts this bucket, so uploads are not
+      # visible until its cache expires or caching is disabled at the edge.
+      # The deploy role has no cloudfront:CreateInvalidation permission, so
+      # re-adding a step here will fail until that permission is restored too.
