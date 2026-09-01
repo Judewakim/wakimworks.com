@@ -1,0 +1,48 @@
+name: Deploy to S3
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Never let two deploys race the sync.
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+permissions:
+  id-token: write # required to mint the GitHub OIDC token
+  contents: read
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: us-east-1
+
+      # Target is the `wakimworks.com` bucket. The distribution also carries a
+      # stale `wakim-works.com` origin that no cache behavior points at -- that
+      # one is NOT the live site. Do not switch this.
+      #
+      # The two dotfile excludes cover .git/, .github/, .gitignore and
+      # .gitattributes, and keep covering any repo metadata added later.
+      - name: Sync site to S3
+        run: |
+          aws s3 sync . s3://wakimworks.com \
+            --delete \
+            --exclude ".*" \
+            --exclude ".*/*" \
+            --exclude "README.md" \
+            --exclude "LICENSE"
+
+      # Without this, changes sit behind the CloudFront cache until TTL expiry.
+      - name: Invalidate CloudFront
+        run: |
+          aws cloudfront create-invalidation \
+            --distribution-id E3NFQH5V5FY5QB \
+            --paths "/*"

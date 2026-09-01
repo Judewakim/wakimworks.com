@@ -1,0 +1,4 @@
+# This repo is a byte-for-byte mirror of the wakimworks.com S3 bucket.
+# Disable all line-ending conversion so what CI uploads is exactly what is
+# committed -- otherwise autocrlf would rewrite index.html on every deploy.
+* -text

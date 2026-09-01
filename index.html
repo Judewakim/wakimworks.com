@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WakimWorks LLC</title>
+   <meta name="description" content="WakimWorks LLC - Cloud consultancy">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="wakimworks-logo-nobackground.png">
+  
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    @keyframes coinSpin {
+      0%   { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+
+    .logo-spin-wrapper {
+      perspective: 800px;
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    .spinning-logo {
+      animation: coinSpin 4s linear infinite;
+      display: block;
+      filter:
+        drop-shadow(2px 0 1px rgba(255, 255, 255, 0.6))
+        drop-shadow(4px 0 2px rgba(180, 180, 180, 0.4))
+        drop-shadow(6px 0 3px rgba(100, 100, 100, 0.25));
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900 flex flex-col min-h-screen">
+
+  <!-- Hero Section -->
+  <header class="flex flex-col items-center justify-center min-h-screen bg-black text-white text-center p-8">
+    <div class="logo-spin-wrapper mx-auto">
+      <img src="wakimworks-logo.png" alt="WakimWorks LLC Logo" class="spinning-logo w-48 h-48">
+    </div>
+    <p class="mt-4 text-lg md:text-xl max-w-2xl" style="font-family: 'Raleway', serif; font-style: italic;">
+      Entrust. Enable. Empower.
+    </p>
+    <h1 class="text-4xl md:text-6xl font-bold" style="font-family: 'Raleway', serif;">WakimWorks LLC</h1>
+    <p class="mt-4 text-lg md:text-xl max-w-2xl" style="font-family: 'Raleway', serif; font-style: italic;">
+      Empowering people to insure the lives of others.
+    </p>
+  </header>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 px-8 bg-white text-center">
+    <h2 class="text-3xl font-bold mb-10">Our Services</h2>
+
+    <!-- InsurTech sub-section -->
+    <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">InsurTech</p>
+    <div class="max-w-5xl mx-auto bg-gray-100 shadow-md rounded-xl p-8 mb-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- Product 1: Agent/Broker Page Creator -->
+        <div class="flex flex-col items-center text-center">
+          <img src="websiteCreationLogo-nobackground.png" alt="S3 Scanner Logo" class="w-20 h-20 mx-auto mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Agent & Broker Page Creator</h3>
+          <p class="mb-6 text-gray-700 flex-1">
+            Instantly generate a professional, verified web presence for insurance agents and brokers. Build trust with clients before the first call. View examples on <a href="https://verifyanagent.com" class="text-blue-600 hover:underline" target="_blank">verifyanagent.com</a>.
+          </p>
+          <a href="https://airtable.com/appBIrSDaNt5N5h5f/pagVwgmanQPyJcis0/form" target="_blank"
+             class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Product 2: Final Expense Platform (Coming Soon) -->
+        <div class="flex flex-col items-center text-center">
+          <div class="w-20 h-20 mx-auto mb-4 bg-gray-300 rounded-full flex items-center justify-center text-3xl">
+            📞
+          </div>
+          <h3 class="text-2xl font-semibold mb-2">Final Expense Call Platform + CRM</h3>
+          <p class="mb-6 text-gray-700 flex-1">
+            A fully integrated inbound call platform, CRM, and KPI dashboard purpose-built for final expense life insurance agents.
+          </p>
+          <div class="flex flex-col items-center gap-2">
+            <button disabled
+              class="inline-block bg-gray-300 text-gray-500 font-medium py-3 px-6 rounded-lg cursor-not-allowed">
+              Get Started
+            </button>
+            <span class="text-xs text-gray-400 font-semibold uppercase tracking-widest">Coming Soon</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Security sub-section -->
+    <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-4">Security</p>
+    <div class="max-w-5xl mx-auto bg-gray-100 shadow-md rounded-xl p-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <!-- S3 Scanner -->
+        <div class="flex flex-col items-center text-center">
+          <img src="s3scanner-logo.png" alt="S3 Scanner Logo" class="w-20 h-20 mx-auto mb-4">
+          <h3 class="text-2xl font-semibold mb-2">Security Scanner for AWS S3</h3>
+          <p class="mb-6 text-gray-700 flex-1">
+            Scan all buckets in your AWS S3 account(s), identify misconfigurations, and auto-remediate issues to keep your data secure.
+            Always evolving with new features.
+          </p>
+          <!-- <a href="https://aws.amazon.com/marketplace/pp/prodview-opi7622wlb2wk" target="_blank"
+             class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition">
+            View on AWS Marketplace
+          </a> -->
+          <div class="flex flex-col items-center gap-2">
+            <button onclick="copySecurityScanCommand()" class="inline-block bg-blue-400 hover:bg-blue-500 text-white font-medium py-2 px-4 rounded-lg transition text-sm">📋 Copy Deployment Command</button>
+            <a href="https://console.aws.amazon.com/cloudshell/home?region=us-east-1" target="_blank"
+               class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition">
+              Open in AWS CloudShell
+            </a>
+          </div>
+        </div>
+
+        <!-- HIPAA Compliance -->
+        <div class="flex flex-col items-center text-center">
+          <img src="hipaa-logo.png" alt="S3 Compliance Scanner Logo" class="w-20 h-20 mx-auto mb-4">
+          <h3 class="text-2xl font-semibold mb-2">HIPAA Compliance System for AWS S3</h3>
+          <p class="mb-6 text-gray-700 flex-1">
+            Scan all buckets in your AWS S3 account(s) against HIPAA compliance controls, automatically remediate, audit logging, generate reports, all from one intuitive dashboard to keep your PHI secure.
+            Always evolving with new features.
+          </p>
+          <div class="flex flex-col items-center gap-2">
+            <button onclick="copyHIPAACommand()" class="inline-block bg-blue-400 hover:bg-blue-500 text-white font-medium py-2 px-4 rounded-lg transition text-sm">📋 Copy Deployment Command</button>
+            <a href="https://console.aws.amazon.com/cloudshell/home?region=us-east-1" target="_blank"
+               class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-medium py-3 px-6 rounded-lg transition">
+              Open in AWS CloudShell
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <script>
+    function copyHIPAACommand() {
+      const command = 'curl -O https://wakimworks-public-templates.s3.amazonaws.com/s3-scanner/hipaa-deployment.py && python3 hipaa-deployment.py';
+      navigator.clipboard.writeText(command);
+      document.getElementById('customModal').classList.remove('hidden');
+    }
+    function copySecurityScanCommand() {
+      const command = `# PARAMETERS: your email, buckets excluded from scan, invocation mode
+      aws cloudformation create-stack \
+        --stack-name WakimWorksS3ScannerLauncher \
+        --template-url https://s3.amazonaws.com/wakimworks-public-templates/s3-scanner/WakimWorks-S3Scanner-Launcher.yaml \
+        --capabilities CAPABILITY_NAMED_IAM \
+        --region us-east-1 \
+        --parameters \
+          ParameterKey=UserEmail,ParameterValue=user@example.com \
+          ParameterKey=InvocationMode,ParameterValue=scanning_only \
+          ParameterKey=ExcludeBuckets,ParameterValue=""
+      `;
+      navigator.clipboard.writeText(command);
+      document.getElementById('customModal').classList.remove('hidden');
+    }
+    function closeModal() {
+      document.getElementById('customModal').classList.add('hidden');
+    }
+    </script>
+
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 px-8 bg-gray-50">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-bold mb-8">About Us</h2>
+      <p class="mb-6 text-gray-700">
+        At WakimWorks LLC, our mission is to secure the digital foundations of human knowledge. 
+        We help museums, libraries, and educational institutions protect their digital collections with cloud-native security, resilience, and accessibility at the core. 
+        From automated S3 scanning to secure storage design, our focus is on building trusted systems that preserve history, research, and culture against loss or compromise. 
+        We believe the future of heritage preservation depends on secure infrastructure — and we’re here to make that future possible.
+      </p>
+      <p class="text-gray-700">
+        Founded by <strong>Jude Wakim</strong>, we aim to ensure that future generations can access authentic, untampered records from our past by fortifying the cloud systems and digital repositories that house them.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-200 py-10 mt-auto">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-sm">&copy; <span id="year"></span> WakimWorks LLC. All rights reserved.</p>
+      
+      <!-- Social Links -->
+      <div class="flex space-x-6">
+        <a href="https://linkedin.com/in/jude-wakim" target="_blank" aria-label="LinkedIn" class="hover:text-blue-400">LinkedIn</a>
+        <a href="https://github.com/judewakim" target="_blank" aria-label="GitHub" class="hover:text-gray-400">GitHub</a>
+        <a href="https://twitter.com/judewakim" target="_blank" aria-label="Twitter" class="hover:text-blue-300">Twitter/X</a>
+        <a href="https://medium.com/@judewakim" target="_blank" aria-label="Medium" class="hover:text-green-400">Medium</a>
+        <a href="https://dev.to/vvakim" target="_blank" aria-label="Dev.to" class="hover:text-orange-400">Dev.to</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom Modal -->
+  <div id="customModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" onclick="closeModal()">
+    <div class="bg-white rounded-lg p-8 max-w-sm text-center shadow-xl" onclick="event.stopPropagation()">
+      <img src="wakimworks-logo-nobackground.png" alt="WakimWorks Logo" class="w-16 h-16 mx-auto mb-4">
+      <p class="text-gray-800 mb-6">Command copied! Now open CloudShell and paste it.</p>
+      <button onclick="closeModal()" class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-6 rounded-lg transition">OK</button>
+    </div>
+  </div>
+
+  <!-- JS for dynamic year -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
