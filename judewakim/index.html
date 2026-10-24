@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jude Wakim — Cloud security engineer</title>
+  <meta name="description" content="Jude Wakim is a cloud security engineer and licensed insurance broker in Orlando. Projects, live demos and source code.">
+  <meta name="theme-color" content="#FAF8F4">
+  <link rel="canonical" href="https://wakimworks.com/judewakim/">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://wakimworks.com/judewakim/">
+  <meta property="og:title" content="Jude Wakim — Cloud security engineer">
+  <meta property="og:description" content="Projects, live demos and source code.">
+  <meta property="og:image" content="https://wakimworks.com/judewakim/img/jude-wakim.jpg">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+  <link rel="apple-touch-icon" href="/favicon-180.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&amp;display=swap">
+
+  <!-- Shares the site's "Paper" tokens. Versioned filenames: the deploy never
+       invalidates CloudFront, so bump the name on every change. -->
+  <link rel="stylesheet" href="/styles.v5.css">
+  <link rel="stylesheet" href="portfolio.v1.css">
+  <script src="portfolio.v1.js" defer></script>
+</head>
+<body>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <nav class="nav is-stuck pnav" aria-label="Primary">
+    <div class="wrap nav__inner">
+      <a class="nav__brand" href="/">
+        <img src="/mark-ink-64.png" alt="" width="64" height="64" aria-hidden="true">
+        <span>WakimWorks</span>
+      </a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu" aria-label="Open menu">
+        <span class="menu-btn__bars" aria-hidden="true"><i></i><i></i><i></i></span>
+      </button>
+    </div>
+    <div class="menu" id="menu" hidden>
+      <div class="wrap menu__inner">
+        <div class="menu__group">
+          <h2 class="menu__title">Resumes</h2>
+          <p class="menu__soon">Coming soon.</p>
+        </div>
+        <div class="menu__group">
+          <h2 class="menu__title">Contact</h2>
+          <ul class="menu__list">
+            <li><a href="mailto:judewakim@wakimworks.com">judewakim@wakimworks.com</a></li>
+            <li><a href="https://www.linkedin.com/in/jude-wakim" target="_blank" rel="noopener">LinkedIn</a></li>
+            <li><a href="https://github.com/Judewakim" target="_blank" rel="noopener">GitHub</a></li>
+            <li><a href="https://medium.com/@judewakim" target="_blank" rel="noopener">Medium</a></li>
+            <li><a href="https://dev.to/vvakim" target="_blank" rel="noopener">DEV</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+
+    <header class="profile wrap">
+      <img class="profile__photo" src="img/jude-wakim.jpg" width="480" height="480" alt="Jude Wakim">
+      <div>
+        <h1 class="h1 profile__name">Jude Wakim</h1>
+        <p class="lede profile__bio">
+          Cloud security engineer and licensed insurance broker in Orlando. I build
+          software for the insurance industry and secure the AWS infrastructure it
+          runs on.
+        </p>
+        <p class="profile__creds">CompTIA Security+ and Network+, AWS Certified Cloud Practitioner, Microsoft Azure Fundamentals. Information Technology degree, University of Central Florida.</p>
+      </div>
+    </header>
+
+    <section class="section wrap" aria-labelledby="projects-title">
+      <div class="section__head section__head--tight">
+        <h2 class="h2 projects__title" id="projects-title">Projects</h2>
+      </div>
+
+      <article class="proj">
+        <a class="proj__shot" href="s3-sentry/" aria-hidden="true" tabindex="-1">
+          <img src="img/s3-sentry.png" width="1280" height="800" loading="lazy" alt="">
+        </a>
+        <div class="proj__body">
+          <h3 class="proj__name">S3 Sentry</h3>
+          <p class="proj__claim">Finds the S3 buckets that would end up in a breach report.</p>
+          <p class="proj__desc">
+            Scans every bucket in an AWS account with 14 Prowler checks, maps each failure
+            to NIST CSF and emails signed one-click fixes. The live demo scans your own
+            account through a read-only IAM role you deploy and delete.
+          </p>
+          <p class="proj__stack">Python, Lambda containers, EventBridge, DynamoDB, STS, CloudFormation</p>
+          <div class="proj__links">
+            <a class="btn btn--solid" href="s3-sentry/">Try the live demo</a>
+            <a class="btn btn--ghost" href="https://github.com/Judewakim/s3-misconfig" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <a class="proj__shot" href="https://main.dgalf4vmbgbwk.amplifyapp.com/landing/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <img src="/arsenal-tracker.png" width="1909" height="997" loading="lazy" alt="">
+        </a>
+        <div class="proj__body">
+          <h3 class="proj__name">The Arsenal</h3>
+          <p class="proj__claim">The whole life insurance job on one screen.</p>
+          <p class="proj__desc">
+            One workspace for independent agents: CRM, KPIs, calendar, scripts, medical
+            research, carrier reference, underwriting advice, agency management and call
+            workflow.
+          </p>
+          <p class="proj__stack">Source code is private.</p>
+          <div class="proj__links">
+            <a class="btn btn--solid" href="https://main.dgalf4vmbgbwk.amplifyapp.com/landing/" target="_blank" rel="noopener">Visit The Arsenal</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <a class="proj__shot proj__shot--tall" href="https://verifyanagent.com" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <img src="/verifyanagent-profile.png" width="762" height="991" loading="lazy" alt="">
+        </a>
+        <div class="proj__body">
+          <h3 class="proj__name">VerifyAnAgent</h3>
+          <p class="proj__claim">A verified web presence for insurance agents, live before the first call.</p>
+          <p class="proj__desc">
+            Builds a profile page for an agent with their state licenses attached and
+            direct links to the government records that prove them, so a client can check
+            them before picking up the phone.
+          </p>
+          <p class="proj__stack">Source code is private.</p>
+          <div class="proj__links">
+            <a class="btn btn--solid" href="https://verifyanagent.com" target="_blank" rel="noopener">Visit verifyanagent.com</a>
+          </div>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer__inner">
+      <p class="footer__meta">Jude Wakim, <a class="link" href="/">WakimWorks LLC</a></p>
+    </div>
+  </footer>
+
+</body>
+</html>
