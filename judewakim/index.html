@@ -25,8 +25,8 @@
   <!-- Shares the site's "Paper" tokens. Versioned filenames: the deploy never
        invalidates CloudFront, so bump the name on every change. -->
   <link rel="stylesheet" href="/styles.v5.css">
-  <link rel="stylesheet" href="portfolio.v1.css">
-  <script src="portfolio.v1.js" defer></script>
+  <link rel="stylesheet" href="portfolio.v2.css">
+  <script src="portfolio.v2.js" defer></script>
 </head>
 <body>
 
@@ -46,7 +46,9 @@
       <div class="wrap menu__inner">
         <div class="menu__group">
           <h2 class="menu__title">Resumes</h2>
-          <p class="menu__soon">Coming soon.</p>
+          <ul class="menu__list">
+            <li><a href="resumes/Jude-Wakim-Resume-Cloud-Engineer.pdf" target="_blank" rel="noopener">Cloud Engineer (PDF)</a></li>
+          </ul>
         </div>
         <div class="menu__group">
           <h2 class="menu__title">Contact</h2>
@@ -73,7 +75,7 @@
           software for the insurance industry and secure the AWS infrastructure it
           runs on.
         </p>
-        <p class="profile__creds">CompTIA Security+ and Network+, AWS Certified Cloud Practitioner, Microsoft Azure Fundamentals. Information Technology degree, University of Central Florida.</p>
+        <p class="profile__creds">CompTIA Security+ and Network+, AWS Certified Cloud Practitioner, Microsoft Azure Fundamentals. B.S. in Information Technology, University of Central Florida.</p>
       </div>
     </header>
 
@@ -94,9 +96,9 @@
             to NIST CSF and emails signed one-click fixes. The live demo scans your own
             account through a read-only IAM role you deploy and delete.
           </p>
-          <p class="proj__stack">Python, Lambda containers, EventBridge, DynamoDB, STS, CloudFormation</p>
+          <p class="proj__stack">Python, Docker, Lambda container images, EventBridge, DynamoDB, STS, CloudFormation</p>
           <div class="proj__links">
-            <a class="btn btn--solid" href="s3-sentry/">Try the live demo</a>
+            <a class="btn btn--solid" href="s3-sentry/">Try it live</a>
             <a class="btn btn--ghost" href="https://github.com/Judewakim/s3-misconfig" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
@@ -114,9 +116,9 @@
             research, carrier reference, underwriting advice, agency management and call
             workflow.
           </p>
-          <p class="proj__stack">Source code is private.</p>
           <div class="proj__links">
             <a class="btn btn--solid" href="https://main.dgalf4vmbgbwk.amplifyapp.com/landing/" target="_blank" rel="noopener">Visit The Arsenal</a>
+            <span class="proj__private">Source code is private.</span>
           </div>
         </div>
       </article>
@@ -133,9 +135,9 @@
             direct links to the government records that prove them, so a client can check
             them before picking up the phone.
           </p>
-          <p class="proj__stack">Source code is private.</p>
           <div class="proj__links">
             <a class="btn btn--solid" href="https://verifyanagent.com" target="_blank" rel="noopener">Visit verifyanagent.com</a>
+            <span class="proj__private">Source code is private.</span>
           </div>
         </div>
       </article>

@@ -72,3 +72,6 @@
   .profile{ grid-template-columns:1fr; justify-items:start; }
   .proj{ grid-template-columns:1fr; }
 }
+
+.proj__links{ align-items:center; }
+.proj__private{ font-size:var(--t-small); color:var(--faint); }
