@@ -75,3 +75,6 @@
 
 .proj__links{ align-items:center; }
 .proj__private{ font-size:var(--t-small); color:var(--faint); }
+.menu__resume{ display:flex; flex-wrap:wrap; align-items:baseline; gap:.4rem 1rem; font-size:1.05rem; letter-spacing:-.01em; }
+.menu__resume span{ display:inline-flex; gap:.9rem; font-size:var(--t-small); }
+.menu__resume span a{ text-decoration:underline; text-underline-offset:.22em; text-decoration-thickness:1px; text-decoration-color:var(--rule-2); }
