@@ -165,6 +165,28 @@
           </div>
         </div>
       </article>
+
+      <article class="proj">
+        <a class="proj__shot" href="https://d30j7qa0u2n6fs.cloudfront.net/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <img src="img/waste-finder.png" width="1280" height="800" loading="lazy" alt="">
+        </a>
+        <div class="proj__body">
+          <h3 class="proj__name">AWS Waste Finder</h3>
+          <p class="proj__claim">Finds the AWS charges nobody is using, and prices each one.</p>
+          <p class="proj__desc">
+            Scans every region of an AWS account for idle NAT gateways, unattached volumes,
+            unused Elastic IPs and seven other kinds of waste, then puts a monthly cost and a
+            fix on each finding. Rightsizing comes from AWS Compute Optimizer. Runs weekly with
+            an emailed summary, or scan your own account live through a read-only IAM role you
+            deploy and delete.
+          </p>
+          <p class="proj__stack">Python, Lambda, AWS CDK, API Gateway, DynamoDB, CloudFront, EventBridge, SNS, STS, GitHub Actions with OIDC</p>
+          <div class="proj__links">
+            <a class="btn btn--solid" href="https://d30j7qa0u2n6fs.cloudfront.net/" target="_blank" rel="noopener">Try it live</a>
+            <a class="btn btn--ghost" href="https://github.com/Judewakim/CostOptimizationWithAWSLambda" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
     </section>
 
   </main>
