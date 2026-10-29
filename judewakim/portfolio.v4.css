@@ -78,3 +78,19 @@
 .menu__resume{ display:flex; flex-wrap:wrap; align-items:baseline; gap:.4rem 1rem; font-size:1.05rem; letter-spacing:-.01em; }
 .menu__resume span{ display:inline-flex; gap:.9rem; font-size:var(--t-small); }
 .menu__resume span a{ text-decoration:underline; text-underline-offset:.22em; text-decoration-thickness:1px; text-decoration-color:var(--rule-2); }
+
+/* --- architecture thumbnail --------------------------------------------- */
+.proj__arch{
+  margin-top:1.25rem; display:flex; align-items:center; gap:.9rem;
+  text-decoration:none; color:inherit; width:fit-content; max-width:100%;
+}
+.proj__arch img{
+  flex:none; width:9.5rem; height:auto; aspect-ratio:16 / 10; object-fit:contain;
+  border:1px solid var(--rule); border-radius:6px; background:#fff;
+  transition:border-color .2s ease;
+}
+.proj__arch:hover img{ border-color:var(--rule-2); }
+.proj__arch-label{ display:grid; gap:.15rem; font-size:var(--t-small); line-height:1.35; }
+.proj__arch-label b{ font-weight:500; color:var(--ink); }
+.proj__arch-label span{ color:var(--faint); }
+.proj__arch:hover .proj__arch-label b{ text-decoration:underline; text-underline-offset:.22em; text-decoration-thickness:1px; }
