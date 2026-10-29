@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jude Wakim — Cloud security engineer</title>
-  <meta name="description" content="Jude Wakim is a cloud security engineer and licensed insurance broker in Orlando. Projects, live demos and source code.">
+  <title>Jude Wakim — Cloud engineer in Orlando</title>
+  <meta name="description" content="Jude Wakim is a cloud engineer in Orlando who builds, deploys and operates AWS infrastructure with Terraform, CDK and CI/CD. Projects, live demos and source code.">
   <meta name="theme-color" content="#FAF8F4">
   <link rel="canonical" href="https://wakimworks.com/judewakim/">
 
   <meta property="og:type" content="profile">
   <meta property="og:url" content="https://wakimworks.com/judewakim/">
-  <meta property="og:title" content="Jude Wakim — Cloud security engineer">
-  <meta property="og:description" content="Projects, live demos and source code.">
+  <meta property="og:title" content="Jude Wakim — Cloud engineer in Orlando">
+  <meta property="og:description" content="Cloud engineer in Orlando. I build, deploy and operate AWS infrastructure with Terraform, CDK and CI/CD.">
   <meta property="og:image" content="https://wakimworks.com/judewakim/img/jude-wakim.jpg">
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -25,7 +25,7 @@
   <!-- Shares the site's "Paper" tokens. Versioned filenames: the deploy never
        invalidates CloudFront, so bump the name on every change. -->
   <link rel="stylesheet" href="/styles.v5.css">
-  <link rel="stylesheet" href="portfolio.v3.css">
+  <link rel="stylesheet" href="portfolio.v4.css">
   <script src="portfolio.v2.js" defer></script>
 </head>
 <body>
@@ -73,9 +73,8 @@
       <div>
         <h1 class="h1 profile__name">Jude Wakim</h1>
         <p class="lede profile__bio">
-          Cloud security engineer and licensed insurance broker in Orlando. I build
-          software for the insurance industry and secure the AWS infrastructure it
-          runs on.
+          Cloud engineer in Orlando. I build, deploy and operate AWS infrastructure
+          with Terraform, CDK and CI/CD.
         </p>
         <p class="profile__creds">CompTIA Security+ and Network+, AWS Certified Cloud Practitioner, Microsoft Azure Fundamentals. B.S. in Information Technology, University of Central Florida.</p>
       </div>
@@ -92,12 +91,20 @@
         </a>
         <div class="proj__body">
           <h3 class="proj__name">The Arsenal</h3>
-          <p class="proj__claim">The whole life insurance job on one screen.</p>
+          <p class="proj__claim">A production SaaS I build, deploy and run alone.</p>
           <p class="proj__desc">
-            One workspace for independent agents: CRM, KPIs, calendar, scripts, medical
-            research, carrier reference, underwriting advice, agency management and call
-            workflow.
+            A multi-tenant platform for life insurance agents with about 30 user accounts and
+            regulated client data. Every change moves from a local sandbox to staging to
+            production, gated by GitHub Actions CI and a manual review before release.
+            CloudWatch alarms on API errors, rate limits and KMS spikes page Slack. DynamoDB
+            point-in-time recovery and deletion protection guard the data, and reserved Lambda
+            concurrency with WAF rate rules caps the AWS and Twilio bill.
           </p>
+          <p class="proj__stack">AWS Amplify Gen 2, CDK, AppSync, Lambda, DynamoDB, Cognito, KMS, WAF, CloudWatch, SNS, GitHub Actions</p>
+          <a class="proj__arch" href="https://github.com/Judewakim/arsenal-showcase/blob/main/docs/architecture.svg" target="_blank" rel="noopener">
+            <img src="img/arch/arsenal.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of The Arsenal">
+            <span class="proj__arch-label"><b>Architecture diagram</b><span>Full size on GitHub</span></span>
+          </a>
           <div class="proj__links">
             <a class="btn btn--solid" href="https://main.dgalf4vmbgbwk.amplifyapp.com/landing/" target="_blank" rel="noopener">Visit The Arsenal</a>
             <a class="btn btn--ghost" href="https://github.com/Judewakim/arsenal-showcase" target="_blank" rel="noopener">GitHub</a>
@@ -117,6 +124,10 @@
             direct links to the government records that prove them, so a client can check
             them before picking up the phone.
           </p>
+          <a class="proj__arch" href="https://github.com/Judewakim/verifyanagent-engine/blob/main/docs/architecture.svg" target="_blank" rel="noopener">
+            <img src="img/arch/verifyanagent.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of VerifyAnAgent">
+            <span class="proj__arch-label"><b>Architecture diagram</b><span>Full size on GitHub</span></span>
+          </a>
           <div class="proj__links">
             <a class="btn btn--solid" href="https://verifyanagent.com" target="_blank" rel="noopener">Visit verifyanagent.com</a>
             <a class="btn btn--ghost" href="https://github.com/Judewakim/verifyanagent-engine" target="_blank" rel="noopener">GitHub</a>
@@ -139,6 +150,10 @@
             and open your own report; nothing leaves your browser.
           </p>
           <p class="proj__stack">Python, boto3, STS with External ID, CloudFormation, Terraform, openpyxl, pytest with moto, GitHub Actions</p>
+          <a class="proj__arch" href="https://github.com/Judewakim/SOC2-Compliance-Workbook/blob/main/docs/architecture.svg" target="_blank" rel="noopener">
+            <img src="img/arch/soc2-evidence-kit.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of SOC 2 Evidence Kit">
+            <span class="proj__arch-label"><b>Architecture diagram</b><span>Full size on GitHub</span></span>
+          </a>
           <div class="proj__links">
             <a class="btn btn--solid" href="soc2-evidence-kit/">Try it live</a>
             <a class="btn btn--ghost" href="https://github.com/Judewakim/SOC2-Compliance-Workbook" target="_blank" rel="noopener">GitHub</a>
@@ -152,15 +167,21 @@
         </a>
         <div class="proj__body">
           <h3 class="proj__name">SecurityStack</h3>
-          <p class="proj__claim">Turns on AWS security in one click.</p>
+          <p class="proj__claim">A Python CDK app that ships as one CloudFormation stack.</p>
           <p class="proj__desc">
-            One CloudFormation stack switches on GuardDuty, Security Hub, AWS Config,
-            Inspector, Access Analyzer and CloudTrail, then emails critical findings and a
-            weekly posture report. It detects services an account already runs and leaves
-            them alone, so it deploys cleanly on real accounts. Includes a free read-only
-            account check.
+            Custom resources check which services an account already runs and enable only
+            what's missing, so the stack deploys cleanly on real accounts instead of failing
+            on conflicts. EventBridge and Lambda route findings to email. Every push runs
+            tests and a cdk-nag synth in GitHub Actions, and staging deploys through OIDC with
+            no stored keys. The result: GuardDuty, Security Hub, Config, Inspector, Access
+            Analyzer and CloudTrail on in one click, with critical findings and a weekly
+            posture report by email. Includes a free read-only account check.
           </p>
           <p class="proj__stack">Python CDK, CloudFormation custom resources, Lambda, EventBridge, SNS, cdk-nag, GitHub Actions with OIDC</p>
+          <a class="proj__arch" href="https://github.com/Judewakim/securitystack/blob/main/docs/architecture-baseline.svg" target="_blank" rel="noopener">
+            <img src="img/arch/securitystack.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of SecurityStack">
+            <span class="proj__arch-label"><b>Architecture diagram</b><span>Full size on GitHub</span></span>
+          </a>
           <div class="proj__links">
             <a class="btn btn--solid" href="https://d2eelnvipxf0ax.cloudfront.net/" target="_blank" rel="noopener">Try it live</a>
             <a class="btn btn--ghost" href="https://github.com/Judewakim/securitystack" target="_blank" rel="noopener">GitHub</a>
@@ -174,13 +195,20 @@
         </a>
         <div class="proj__body">
           <h3 class="proj__name">S3 Sentry</h3>
-          <p class="proj__claim">Finds the S3 buckets that would end up in a breach report.</p>
+          <p class="proj__claim">A containerized scanner that runs on Lambda across AWS accounts.</p>
           <p class="proj__desc">
-            Scans every bucket in an AWS account with 14 Prowler checks, maps each failure
-            to NIST CSF and emails signed one-click fixes. The live demo scans your own
-            account through a read-only IAM role you deploy and delete.
+            Packages Prowler as a Lambda container image, run daily by EventBridge. It assumes
+            a read-only role in each account through STS and keeps tenants, findings and an
+            audit log in DynamoDB. Fixes go out as HMAC-signed links with a 48-hour undo. The
+            result: every bucket checked against 14 S3 controls mapped to NIST CSF, with
+            one-click fixes for the riskiest. The live demo scans your own account through a
+            read-only IAM role you deploy and delete.
           </p>
-          <p class="proj__stack">Python, Docker, Lambda container images, EventBridge, DynamoDB, STS, CloudFormation</p>
+          <p class="proj__stack">Python, Docker, Lambda container images, EventBridge, DynamoDB, STS, SSM, SES, CloudFormation</p>
+          <a class="proj__arch" href="https://github.com/Judewakim/s3-misconfig/blob/main/docs/architecture.svg" target="_blank" rel="noopener">
+            <img src="img/arch/s3-sentry.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of S3 Sentry">
+            <span class="proj__arch-label"><b>Architecture diagram</b><span>Full size on GitHub</span></span>
+          </a>
           <div class="proj__links">
             <a class="btn btn--solid" href="s3-sentry/">Try it live</a>
             <a class="btn btn--ghost" href="https://github.com/Judewakim/s3-misconfig" target="_blank" rel="noopener">GitHub</a>
@@ -194,15 +222,21 @@
         </a>
         <div class="proj__body">
           <h3 class="proj__name">AWS Waste Finder</h3>
-          <p class="proj__claim">Finds the AWS charges nobody is using, and prices each one.</p>
+          <p class="proj__claim">A serverless multi-region scanner, built with CDK and shipped through CI/CD.</p>
           <p class="proj__desc">
-            Scans every region of an AWS account for idle NAT gateways, unattached volumes,
-            unused Elastic IPs and seven other kinds of waste, then puts a monthly cost and a
-            fix on each finding. Rightsizing comes from AWS Compute Optimizer. Runs weekly with
-            an emailed summary, or scan your own account live through a read-only IAM role you
-            deploy and delete.
+            Lambda scans every enabled region through a read-only cross-account role locked to
+            an ExternalId, reading CloudWatch metrics and Compute Optimizer. One failed check,
+            region or account never stops the rest. Results live in DynamoDB and encrypted S3
+            with short expiry, and GitHub Actions deploys to staging through OIDC. The result:
+            idle NAT gateways, unattached volumes, unused Elastic IPs and seven other kinds of
+            waste, each with a monthly cost and a fix. Runs weekly with an emailed summary, or
+            scan your own account live through a read-only IAM role you deploy and delete.
           </p>
           <p class="proj__stack">Python, Lambda, AWS CDK, API Gateway, DynamoDB, CloudFront, EventBridge, SNS, STS, GitHub Actions with OIDC</p>
+          <a class="proj__arch" href="https://github.com/Judewakim/CostOptimizationWithAWSLambda/blob/main/docs/architecture.svg" target="_blank" rel="noopener">
+            <img src="img/arch/waste-finder.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of AWS Waste Finder">
+            <span class="proj__arch-label"><b>Architecture diagram</b><span>Full size on GitHub</span></span>
+          </a>
           <div class="proj__links">
             <a class="btn btn--solid" href="https://d30j7qa0u2n6fs.cloudfront.net/" target="_blank" rel="noopener">Try it live</a>
             <a class="btn btn--ghost" href="https://github.com/Judewakim/CostOptimizationWithAWSLambda" target="_blank" rel="noopener">GitHub</a>
