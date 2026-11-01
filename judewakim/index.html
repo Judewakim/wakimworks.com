@@ -86,6 +86,33 @@
       </div>
 
       <article class="proj">
+        <a class="proj__shot" href="https://github.com/Judewakim/terraform-ecs-platform" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <img src="img/terraform-ecs.png" width="1280" height="800" loading="lazy" alt="">
+        </a>
+        <div class="proj__body">
+          <h3 class="proj__name">Terraform ECS Platform</h3>
+          <p class="proj__claim">A production-shaped AWS platform, built with Terraform, then broken on purpose.</p>
+          <p class="proj__desc">
+            An ECS Fargate service behind a load balancer in a three-tier, two-zone VPC, with RDS
+            Postgres in subnets that have no route to the internet. The database password is
+            created and rotated by AWS and read by the app per connection. GitHub Actions deploys
+            through OIDC with no stored keys, behind an approval gate and an IAM permissions
+            boundary. In an incident drill, a manual security-group change took the app down; a
+            CloudWatch alarm caught it in 5 minutes and Terraform repaired the drift.
+          </p>
+          <p class="proj__stack">Terraform, ECS Fargate, ALB, VPC, RDS Postgres, KMS, Secrets Manager, CloudWatch, SNS, Docker, GitHub Actions with OIDC, Checkov</p>
+          <a class="proj__arch" href="https://github.com/Judewakim/terraform-ecs-platform/blob/main/docs/architecture.png" target="_blank" rel="noopener">
+            <img src="img/arch/terraform-ecs.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of the Terraform ECS Platform">
+            <span class="proj__arch-label"><b>Architecture diagram</b><span>Full size on GitHub</span></span>
+          </a>
+          <div class="proj__links">
+            <a class="btn btn--solid" href="https://github.com/Judewakim/terraform-ecs-platform/blob/main/docs/postmortems/2026-10-31-db-access-drill.md" target="_blank" rel="noopener">Read the postmortem</a>
+            <a class="btn btn--ghost" href="https://github.com/Judewakim/terraform-ecs-platform" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
         <a class="proj__shot" href="https://main.dgalf4vmbgbwk.amplifyapp.com/landing/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
           <img src="/arsenal-tracker.png" width="1909" height="997" loading="lazy" alt="">
         </a>
@@ -113,50 +140,29 @@
       </article>
 
       <article class="proj">
-        <a class="proj__shot proj__shot--tall" href="https://verifyanagent.com" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <img src="/verifyanagent-profile.png" width="762" height="991" loading="lazy" alt="">
+        <a class="proj__shot" href="https://d30j7qa0u2n6fs.cloudfront.net/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <img src="img/waste-finder.png" width="1280" height="800" loading="lazy" alt="">
         </a>
         <div class="proj__body">
-          <h3 class="proj__name">VerifyAnAgent</h3>
-          <p class="proj__claim">A verified web presence for insurance agents, live before the first call.</p>
+          <h3 class="proj__name">AWS Waste Finder</h3>
+          <p class="proj__claim">A serverless multi-region scanner, built with CDK and shipped through CI/CD.</p>
           <p class="proj__desc">
-            Builds a profile page for an agent with their state licenses attached and
-            direct links to the government records that prove them, so a client can check
-            them before picking up the phone.
+            Lambda scans every enabled region through a read-only cross-account role locked to
+            an ExternalId, reading CloudWatch metrics and Compute Optimizer. One failed check,
+            region or account never stops the rest. Results live in DynamoDB and encrypted S3
+            with short expiry, and GitHub Actions deploys to staging through OIDC. The result:
+            idle NAT gateways, unattached volumes, unused Elastic IPs and seven other kinds of
+            waste, each with a monthly cost and a fix. Runs weekly with an emailed summary, or
+            scan your own account live through a read-only IAM role you deploy and delete.
           </p>
-          <a class="proj__arch" href="https://github.com/Judewakim/verifyanagent-engine/blob/main/docs/architecture.svg" target="_blank" rel="noopener">
-            <img src="img/arch/verifyanagent.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of VerifyAnAgent">
+          <p class="proj__stack">Python, Lambda, AWS CDK, API Gateway, DynamoDB, CloudFront, EventBridge, SNS, STS, GitHub Actions with OIDC</p>
+          <a class="proj__arch" href="https://github.com/Judewakim/CostOptimizationWithAWSLambda/blob/main/docs/architecture.svg" target="_blank" rel="noopener">
+            <img src="img/arch/waste-finder.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of AWS Waste Finder">
             <span class="proj__arch-label"><b>Architecture diagram</b><span>Full size on GitHub</span></span>
           </a>
           <div class="proj__links">
-            <a class="btn btn--solid" href="https://verifyanagent.com" target="_blank" rel="noopener">Visit verifyanagent.com</a>
-            <a class="btn btn--ghost" href="https://github.com/Judewakim/verifyanagent-engine" target="_blank" rel="noopener">GitHub</a>
-          </div>
-        </div>
-      </article>
-
-      <article class="proj">
-        <a class="proj__shot" href="soc2-evidence-kit/" aria-hidden="true" tabindex="-1">
-          <img src="img/soc2-evidence-kit.png" width="1280" height="800" loading="lazy" alt="">
-        </a>
-        <div class="proj__body">
-          <h3 class="proj__name">SOC 2 Evidence Kit</h3>
-          <p class="proj__claim">Hands your auditor evidence, not screenshots.</p>
-          <p class="proj__desc">
-            Checks an AWS account against 31 SOC 2 controls through a read-only role, maps
-            every result to a Trust Services Criterion, and packages the raw AWS responses
-            behind each one with a SHA-256 manifest. Includes a SOC 2 workbook covering the
-            procedural controls automation can't see. Try the sample, or run it in CloudShell
-            and open your own report; nothing leaves your browser.
-          </p>
-          <p class="proj__stack">Python, boto3, STS with External ID, CloudFormation, Terraform, openpyxl, pytest with moto, GitHub Actions</p>
-          <a class="proj__arch" href="https://github.com/Judewakim/SOC2-Compliance-Workbook/blob/main/docs/architecture.svg" target="_blank" rel="noopener">
-            <img src="img/arch/soc2-evidence-kit.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of SOC 2 Evidence Kit">
-            <span class="proj__arch-label"><b>Architecture diagram</b><span>Full size on GitHub</span></span>
-          </a>
-          <div class="proj__links">
-            <a class="btn btn--solid" href="soc2-evidence-kit/">Try it live</a>
-            <a class="btn btn--ghost" href="https://github.com/Judewakim/SOC2-Compliance-Workbook" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn--solid" href="https://d30j7qa0u2n6fs.cloudfront.net/" target="_blank" rel="noopener">Try it live</a>
+            <a class="btn btn--ghost" href="https://github.com/Judewakim/CostOptimizationWithAWSLambda" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </article>
@@ -217,29 +223,50 @@
       </article>
 
       <article class="proj">
-        <a class="proj__shot" href="https://d30j7qa0u2n6fs.cloudfront.net/" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
-          <img src="img/waste-finder.png" width="1280" height="800" loading="lazy" alt="">
+        <a class="proj__shot proj__shot--tall" href="https://verifyanagent.com" target="_blank" rel="noopener" aria-hidden="true" tabindex="-1">
+          <img src="/verifyanagent-profile.png" width="762" height="991" loading="lazy" alt="">
         </a>
         <div class="proj__body">
-          <h3 class="proj__name">AWS Waste Finder</h3>
-          <p class="proj__claim">A serverless multi-region scanner, built with CDK and shipped through CI/CD.</p>
+          <h3 class="proj__name">VerifyAnAgent</h3>
+          <p class="proj__claim">A verified web presence for insurance agents, live before the first call.</p>
           <p class="proj__desc">
-            Lambda scans every enabled region through a read-only cross-account role locked to
-            an ExternalId, reading CloudWatch metrics and Compute Optimizer. One failed check,
-            region or account never stops the rest. Results live in DynamoDB and encrypted S3
-            with short expiry, and GitHub Actions deploys to staging through OIDC. The result:
-            idle NAT gateways, unattached volumes, unused Elastic IPs and seven other kinds of
-            waste, each with a monthly cost and a fix. Runs weekly with an emailed summary, or
-            scan your own account live through a read-only IAM role you deploy and delete.
+            Builds a profile page for an agent with their state licenses attached and
+            direct links to the government records that prove them, so a client can check
+            them before picking up the phone.
           </p>
-          <p class="proj__stack">Python, Lambda, AWS CDK, API Gateway, DynamoDB, CloudFront, EventBridge, SNS, STS, GitHub Actions with OIDC</p>
-          <a class="proj__arch" href="https://github.com/Judewakim/CostOptimizationWithAWSLambda/blob/main/docs/architecture.svg" target="_blank" rel="noopener">
-            <img src="img/arch/waste-finder.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of AWS Waste Finder">
+          <a class="proj__arch" href="https://github.com/Judewakim/verifyanagent-engine/blob/main/docs/architecture.svg" target="_blank" rel="noopener">
+            <img src="img/arch/verifyanagent.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of VerifyAnAgent">
             <span class="proj__arch-label"><b>Architecture diagram</b><span>Full size on GitHub</span></span>
           </a>
           <div class="proj__links">
-            <a class="btn btn--solid" href="https://d30j7qa0u2n6fs.cloudfront.net/" target="_blank" rel="noopener">Try it live</a>
-            <a class="btn btn--ghost" href="https://github.com/Judewakim/CostOptimizationWithAWSLambda" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn btn--solid" href="https://verifyanagent.com" target="_blank" rel="noopener">Visit verifyanagent.com</a>
+            <a class="btn btn--ghost" href="https://github.com/Judewakim/verifyanagent-engine" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="proj">
+        <a class="proj__shot" href="soc2-evidence-kit/" aria-hidden="true" tabindex="-1">
+          <img src="img/soc2-evidence-kit.png" width="1280" height="800" loading="lazy" alt="">
+        </a>
+        <div class="proj__body">
+          <h3 class="proj__name">SOC 2 Evidence Kit</h3>
+          <p class="proj__claim">Hands your auditor evidence, not screenshots.</p>
+          <p class="proj__desc">
+            Checks an AWS account against 31 SOC 2 controls through a read-only role, maps
+            every result to a Trust Services Criterion, and packages the raw AWS responses
+            behind each one with a SHA-256 manifest. Includes a SOC 2 workbook covering the
+            procedural controls automation can't see. Try the sample, or run it in CloudShell
+            and open your own report; nothing leaves your browser.
+          </p>
+          <p class="proj__stack">Python, boto3, STS with External ID, CloudFormation, Terraform, openpyxl, pytest with moto, GitHub Actions</p>
+          <a class="proj__arch" href="https://github.com/Judewakim/SOC2-Compliance-Workbook/blob/main/docs/architecture.svg" target="_blank" rel="noopener">
+            <img src="img/arch/soc2-evidence-kit.png" width="1280" height="800" loading="lazy" alt="Architecture diagram of SOC 2 Evidence Kit">
+            <span class="proj__arch-label"><b>Architecture diagram</b><span>Full size on GitHub</span></span>
+          </a>
+          <div class="proj__links">
+            <a class="btn btn--solid" href="soc2-evidence-kit/">Try it live</a>
+            <a class="btn btn--ghost" href="https://github.com/Judewakim/SOC2-Compliance-Workbook" target="_blank" rel="noopener">GitHub</a>
           </div>
         </div>
       </article>
